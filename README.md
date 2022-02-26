@@ -2,12 +2,16 @@ Hello! Thanks for taking the time to review my log in tests.
 
 Steps to execute:
     1. Download repo from git
-    2. Open CMD prompt
-    3. cd into the "Hudl Test" folder that you've downloaded
-    4. npm install 
+    2. Download nod.js from https://nodejs.org/en/download/ if you don't already have it
+    3. Follow steps to install node.js
+    4. Open CMD prompt
+    5. npm install
+        -- will make sure node.js is ready to go
+    6. cd into the "Hudl Test" folder that you've downloaded (or wherever you places the repo)
+    7. npm install 
         -- this will install the necessary packages to execute the tests
         -- there are quite a few, so give it time to install them all
-    5. npm run allTests 
+    8. npm run allTests 
         -- this will execute the tests. WebdriverIO will run the tests and run them with a head (so we can have a visual the tests are running). When the scripts have complete, the cmd prompt will tell you if the spec files pass or failed.
 
 
@@ -15,7 +19,7 @@ Test design reasoning:
     The instructions I received was to setup various tests on the login website. 
     https://www.hudl.com/login
 
-    Upon reviewing this page, I determined it best to setup 2 tests with multiple assertions in each.
+    Upon reviewing this page, I determined it best to setup 3 tests with multiple assertions in each.
 
     First spec file: 
         Bad email login
@@ -38,6 +42,9 @@ Test design reasoning:
             *The organization login routes to the organization login page
         For each, I check this by navigating in the UI to each of these pages and confirming the URL I am routed to is correct.
 
+    Third spec file:
+        This is to ensure the 'remember me' functionality is working properly. The webpage should remember my username when the checkbox is toggled.
+        This is worthy of it's own spec file as it is important to navigate back to the sign in page, instead of opening a new instance (webdriver IO defaults to opening a new instance).
 
 Test notes:
     There are a couple of major drawbacks with using WebdriverIO.
